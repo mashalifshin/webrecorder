@@ -23,11 +23,6 @@
         <b style="margin-left: 10px"><a href="/replay#records">Browse</a></b>, <b><a href="/replay#files">Download</a></b>, <b><a href="/replay#settings">Delete</a></b><p class="pull-right">Expires in <b><span id="expire">{{ anon_ttl }}</b></p>
         </div>
         {% endif %}
-        
-        <h4 style="line-height: 2em">Try now:</h4>
-        <div class="well">
-            {% include 'frag_recordbar.html' %}
-        </div>
 
         {% if invites_enabled %}
         <h4>We are inviting users to build their own archives as we test this service.</h4>
