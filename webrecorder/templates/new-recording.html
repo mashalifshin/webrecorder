@@ -4,7 +4,7 @@
 		New Recording
 	</div>
 	<div class="recording">
-		<form class="new-recording-form">
+		<form action = "/recordings" method="post" class="new-recording-form">
 			<!-- Template for collection parameterized by anon/registered and by entry point (new from homepage (anon), new from user linkbar (registered), new from collection (registered)) -->
 			<div>
  				<label for="collection">Collection:</label>
@@ -19,7 +19,7 @@
 				<input name="url" type="url">
 			</div>
 			<div>
-			 <input name="start-recording" type="submit" value="Record">
+				<button type="submit">Record</button>
 			</div>
 		</form>
 	</div>

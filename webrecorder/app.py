@@ -296,6 +296,7 @@ RESET_PATH_FILL = '/_resetpassword/{0}?username={1}'
 UPDATE_PASS_PATH = '/_updatepassword'
 SETTINGS = '/_settings'
 
+CREATE_RECORDING = '/recordings'
 
 # TODO: move these to external file for customization, localization, etc..
 DEFAULT_DESC = u"""
@@ -584,6 +585,22 @@ You can now <b>login</b> with your new password!', 'success')
         user = manager.get_curr_user()
         redirect(path_parser.get_user_home(user) + SETTINGS)
 
+    # Create Recording
+    # ============================================================================
+    @post(CREATE_RECORDING)
+    def create_recording():
+        boto_log.debug("handling new recording post request!")
+        collection = post_get('collection', '')
+        recording = post_get('recording', '')
+        url = post_get('url', '')
+
+        new_rec = recording.new(collection, recording, url)
+
+        try:
+            recording.save!
+            # Redirect to recording in progress path
+        except ValidationException as ve:
+            # Render new recording form again with validation errors
 
     # Create Coll
     # ============================================================================
