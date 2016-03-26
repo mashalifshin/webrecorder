@@ -2,6 +2,23 @@ var doc_window = undefined;
 
 $(function() {
     
+    $(".new-recording-form").submit(function(e) {
+        e.preventDefault();
+
+        var collection = $('input[name="collection"]').val();
+        var recording = $('input[name="recording"]').val();
+        var url = $('input[name="url"]').val();
+        var action = "record";
+
+        var recording_path = collection + "/" + recording + "/" + action + "/" + url;
+
+        if(!!url || !/\S/.test(str)) {
+            doc_window.location.href = recording_path;
+        }
+
+        return false;
+    });
+
     var act_state = "record";
     
     $(".nav-url-form").submit(function() {
