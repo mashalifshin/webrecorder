@@ -1,0 +1,26 @@
+<div class="recorder container">
+	<div class="page-heading">
+		<!-- Template for heading to determine which title should go here-->
+		New Recording
+	</div>
+	<div class="recording">
+		<form id="new-recording-form">
+			<!-- Template for collection parameterized by anon/registered and by entry point (new from homepage (anon), new from user linkbar (registered), new from collection (registered)) -->
+			<div>
+ 				<label for="collection-name">Collection:</label>
+				<input name="collection-name" type="text" value="anonymous" disabled>
+			</div>
+			<div>
+ 				<label for="recording-name">Name:</label>
+				<input name="recording-name" type="text" value="My First Recording" autofocus>
+			</div>
+			<div>
+				<label for="url">Url:</label>
+				<input name="url" type="url">
+			</div>
+			<div>
+			 <input name="start-recording" type="submit" value="Record">
+			</div>
+		</form>
+	</div>
+</div>
